@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently 'cd server && yarn dev'"
+    "dev": "concurrently 'cd server && yarn dev' 'cd client && yarn dev'"
   },
   "keywords": [],
   "author": "",

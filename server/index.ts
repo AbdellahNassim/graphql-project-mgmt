@@ -4,6 +4,7 @@ import schema from "./schema/schema";
 import dotenv from "dotenv";
 const colors = require("colors");
 import connectDB from "./config/db";
+import cors from "cors";
 dotenv.config({
   path: "../.env",
 });
@@ -13,7 +14,7 @@ const root = {
 };
 connectDB();
 const app = express();
-
+app.use(cors());
 app.use(
   "/graphql",
   graphqlHTTP({
