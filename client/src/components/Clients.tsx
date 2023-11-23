@@ -2,11 +2,12 @@ import { useQuery } from "@apollo/client";
 import ClientRow from "./ClientRow";
 import { GET_CLIENTS } from "@/queries/client.queries";
 import Spinner from "./Spinner";
+import { Client } from "@/types/client.type";
 function Clients() {
     const { loading, error, data } = useQuery(GET_CLIENTS)
     if (loading) return <Spinner />
     if (error) return <p>Something went wrong</p>
-    const clientsRows = data.clients.map((client: any) => {
+    const clientsRows = data.clients.map((client: Client) => {
         return <ClientRow key={client.id} client={client} />
     })
     return (
